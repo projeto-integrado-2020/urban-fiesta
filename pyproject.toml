@@ -3,6 +3,11 @@ name = "urban-fiesta"
 version = "0.1.0"
 description = "Plataforma de divulgação de eventos"
 authors = ["Caio Raposo <caioraposo@protonmail.com>"]
+license = "Apache 2.0"
+readme = "README.md"
+homepage = "https://github.com/urban-fiesta/urban-fiesta"
+repository = "https://github.com/urban-fiesta/urban-fiesta"
+keywords = ["divulgacao", "eventos"]
 
 [tool.black]
 line-length = 90
