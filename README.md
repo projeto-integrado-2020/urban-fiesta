@@ -1,5 +1,5 @@
 # Urban Fiesta: Plataforma de Divulgação de Eventos
-[![](https://github.com/urban-fiesta/urban-fiesta/workflows/Tests/badge.svg)]
+[![Tests](https://github.com/urban-fiesta/urban-fiesta/workflows/Tests/badge.svg)](https://github.com/urban-fiesta/urban-fiesta/actions?workflow=Tests)
 [![License: Apache 2.0](https://img.shields.io/badge/apache-2-blue.svg)](https://raw.githubusercontent.com/urban-fiesta/urban-fiesta/master/LICENSE)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/ambv/black)
 
