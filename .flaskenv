@@ -1,0 +1,2 @@
+FLASK_APP=src/urban_fiesta
+FLASK_ENV=development
