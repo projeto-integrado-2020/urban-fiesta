@@ -33,7 +33,7 @@ jobs:
         python-version: 3.8
     - name: Install Nox and Poetry
       run: |
-          pip install tox==3.14.5
+          pip install nox==2019.11.9
           pip install poetry==1.0.0
     - name: Test
       run: |
