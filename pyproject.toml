@@ -10,7 +10,6 @@ repository = "https://github.com/urban-fiesta/urban-fiesta"
 keywords = ["divulgacao", "eventos"]
 
 [tool.black]
-line-length = 90
 include = '\.pyi?$'
 exclude = '''
 /(
@@ -38,7 +37,7 @@ show_missing = true
 fail_under = 90
 
 [tool.poetry.dependencies]
-python = "^3.8"
+python = "^3.7"
 flask = "^1.1.1"
 flask-restx = "^0.1.1"
 
