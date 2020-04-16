@@ -9,7 +9,8 @@ Pessoas que buscam eventos durante a noite, principalmente festas e casas noturn
 demasiadamente cansativas, e organizadores de eventos não possuem uma forma eficiente de divulgação e venda de ingressos em uma mesma plataforma.
 
 ## Colaboradores
-Caio Vinícius Raposo Ribeiro
-Matheus Henrique Mello Rebouças 
-Tiago Lopes de Moura
-Thiago Augusto Souza Silva
+
+  Caio Vinícius Raposo Ribeiro
+  Matheus Henrique Mello Rebouças 
+  Tiago Lopes de Moura
+  Thiago Augusto Souza Silva
