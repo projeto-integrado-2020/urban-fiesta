@@ -8,3 +8,8 @@
 Pessoas que buscam eventos durante a noite, principalmente festas e casas noturnas, normalmente não possuem uma fonte de informações confiáveis a respeito desses eventos e recorrem a pesquisas
 demasiadamente cansativas, e organizadores de eventos não possuem uma forma eficiente de divulgação e venda de ingressos em uma mesma plataforma.
 
+## Colaboradores
+Caio Vinícius Raposo Ribeiro
+Matheus Henrique Mello Rebouças 
+Tiago Lopes de Moura
+Thiago Augusto Souza Silva
