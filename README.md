@@ -15,7 +15,7 @@ O **No 12** é uma plataforma que permite encontrar **locais** para sair e **eve
 * Divulgação de eventos
 
 ## API REST
-Neste repositório desenvolve-se uma API REST feita com o micro-framework web [flask](https://palletsprojects.com/p/flask/) e sua extenção [Flask-RESTX](https://github.com/python-restx/flask-restx), os quais permitem desenvolvimento rápido de APIs REST e sua documentação usando o [Swagger](swagger.io).
+Neste repositório desenvolve-se uma API REST feita com o micro-framework web [flask](https://palletsprojects.com/p/flask/) e sua extenção [Flask-RESTX](https://github.com/python-restx/flask-restx), os quais permitem desenvolvimento rápido de APIs REST e sua documentação usando o [Swagger](https://swagger.io).
 
 ## Colaboradores
 Caio Vinícius Raposo Ribeiro<br>
