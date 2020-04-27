@@ -1,4 +1,6 @@
-![NO12](docs/img/no12_logo2.png)
+<p align="center">
+  <img src="docs/img/no12_logo2.png">
+</p>
 
 [![Tests](https://github.com/urban-fiesta/No12/workflows/Tests/badge.svg)](https://github.com/urban-fiesta/No12/actions?workflow=Tests)
 [![codecov](https://codecov.io/gh/urban-fiesta/No12/branch/master/graph/badge.svg)](https://codecov.io/gh/urban-fiesta/No12)
