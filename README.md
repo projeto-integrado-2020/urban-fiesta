@@ -4,13 +4,16 @@
 [![codecov](https://codecov.io/gh/urban-fiesta/No12/branch/master/graph/badge.svg)](https://codecov.io/gh/urban-fiesta/No12)
 
 
-O __No 12__ é uma plataforma que permite encontrar **locais** para sair e **eventos** que acontecem nesse exato momento na sua localidade.<br>
+O **No 12** é uma plataforma que permite encontrar **locais** para sair e **eventos** que acontecem nesse exato momento na sua localidade.<br>
 
 ## Funcionalidades
 * Descobrir novos locais e eventos
 * Compra de ingressos
 * Compra antecipada de produtos
 * Divulgação de eventos
+
+## API REST
+Neste repositório desenvolve-se uma API REST feita com o micro-framework web [flask](https://palletsprojects.com/p/flask/) e sua extenção [Flask-RESTX](https://github.com/python-restx/flask-restx), os quais permitem desenvolvimento rápido de APIs REST e sua documentação usando o [Swagger](swagger.io).
 
 ## Colaboradores
 Caio Vinícius Raposo Ribeiro<br>
