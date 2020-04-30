@@ -12,7 +12,7 @@ class BaseConfig:
 
 
 class DevelopmentConfig(BaseConfig):
-    pass
+    DEBUG = True
 
 
 class TestingConfig(BaseConfig):
@@ -21,6 +21,7 @@ class TestingConfig(BaseConfig):
 
 class ProductionConfig(BaseConfig):
     MONGODB_URI = ""
+    DEBUG = False
 
 
 config = {
