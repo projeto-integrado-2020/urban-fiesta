@@ -1,2 +1,2 @@
-FLASK_APP=src/urban_fiesta
+FLASK_APP=src/no12
 FLASK_ENV=development
