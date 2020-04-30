@@ -40,6 +40,7 @@ fail_under = 90
 python = "^3.7"
 flask = "^1.1.1"
 flask-restx = "^0.1.1"
+pymongo = "^3.10.1"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.3.5"
