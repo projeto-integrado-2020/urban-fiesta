@@ -1,12 +1,12 @@
 [tool.poetry]
-name = "urban-fiesta"
+name = "No12"
 version = "0.1.0"
 description = "Plataforma de divulgação de eventos"
 authors = ["Caio Raposo <caioraposo@protonmail.com>"]
 license = "Apache 2.0"
 readme = "README.md"
-homepage = "https://github.com/urban-fiesta/urban-fiesta"
-repository = "https://github.com/urban-fiesta/urban-fiesta"
+homepage = "https://github.com/urban-fiesta/No12"
+repository = "https://github.com/urban-fiesta/No12"
 keywords = ["divulgacao", "eventos"]
 
 [tool.black]
