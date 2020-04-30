@@ -1,6 +1,6 @@
 import pytest
 
-from urban_fiesta import create_app
+from no12 import create_app
 
 
 @pytest.fixture
