@@ -2,8 +2,9 @@ import os
 
 from flask import Flask
 
-from no12.settings import config
-from no12.api import api
+from .settings import config
+from .api import api
+from .extensions import db
 
 
 __version__ = "0.1.0"
@@ -24,3 +25,4 @@ def create_app(config_name=None) -> Flask:
 
 def register_extentions(app: Flask) -> None:
     api.init_app(app)
+    db.init_app(app)
