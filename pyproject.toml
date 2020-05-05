@@ -34,7 +34,7 @@ source = ["no12"]
 
 [tool.coverage.report]
 show_missing = true
-fail_under = 90
+fail_under = 20
 
 [tool.poetry.dependencies]
 python = "^3.7"
