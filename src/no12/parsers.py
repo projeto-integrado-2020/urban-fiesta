@@ -13,6 +13,9 @@ user.add_argument("last_name", type=str)
 get_user_email = reqparse.RequestParser()
 get_user_email.add_argument("email", type=str, required=True)
 
+get_event = reqparse.RequestParser()
+get_event.add_argument("event_name", type=str, required=True)
+
 event = reqparse.RequestParser()
 event.add_argument("event_name", type=str, required=True)
 event.add_argument("time", required=True)
