@@ -3,7 +3,6 @@ from flask_login import UserMixin
 
 from .extensions import db
 
-
 class User(UserMixin, db.Document):
     email = db.EmailField(required=True, unique=True)
     first_name = db.StringField(max_length=50)
@@ -15,3 +14,16 @@ class User(UserMixin, db.Document):
 
     def check_password(self, password: str) -> bool:
         return check_password_hash(self.password_hash, password)
+
+class Event(db.Document):
+    event_name = db.StringField(required=True, unique=True)
+    time = db.DateTimeField(required=True)
+    date = db.DateTimeField(required=True)
+    local = db.StringField(required=True)
+    ticket_price = db.FloatField(required=True)
+    event_photo = db.ImageField
+    description = db.StringField
+    age_limit = db.IntField
+
+
+
