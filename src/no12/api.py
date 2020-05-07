@@ -126,9 +126,9 @@ class LogoutResource(Resource):
 
 @api.route("/event")
 class EventResource(Resource):
-    @api.expect(parsers.event)
+    @api.expect(parsers.get_event)
     def get(self):
-        args = parsers.event.parse_args()
+        args = parsers.get_event.parse_args()
         event = get_event(args["event_name"])
         if event:
             return event.to_json()
