@@ -1,29 +1,13 @@
-from flask_restx import Api, Resource, reqparse
+from flask_restx import Api, Resource
 from flask_login import login_user, logout_user, current_user, login_required
 from mongoengine import errors
 
 from .models import User
+from .models import Event
 from .extensions import login
-
+from no12 import parsers
 
 api = Api()
-
-
-confirm_password = reqparse.RequestParser()
-confirm_password.add_argument("password", type=str, required=True)
-
-authenticate = reqparse.RequestParser()
-authenticate.add_argument("email", type=str, required=True)
-authenticate.add_argument("password", type=str, required=True)
-
-user_parser = reqparse.RequestParser()
-user_parser.add_argument("email", type=str, required=True)
-user_parser.add_argument("password", type=str, required=True)
-user_parser.add_argument("first_name", type=str)
-user_parser.add_argument("last_name", type=str)
-
-get_user_parser = reqparse.RequestParser()
-get_user_parser.add_argument("email", type=str, required=True)
 
 
 @login.user_loader
@@ -47,6 +31,15 @@ def get_user_by_email(email: str):
         return user
 
 
+def get_event(event_name: str):
+    try:
+        event = Event.objects.get(event_name=event_name)
+    except errors.DoesNotExist:
+        return None
+    else:
+        return event
+
+
 @api.route("/index")
 class Events(Resource):
     def get(self):
@@ -55,7 +48,7 @@ class Events(Resource):
         else:
             user = "Guest"
         return {
-            "message": "Nenhum evento por enquanto.",
+            "Eventos cadastrados": Event.objects.count(),
             "usuários cadastrados": User.objects.count(),
             "usuário logado": user,
         }
@@ -63,17 +56,17 @@ class Events(Resource):
 
 @api.route("/user")
 class UserResource(Resource):
-    @api.expect(get_user_parser)
+    @api.expect(parsers.get_user_email)
     def get(self):
-        args = get_user_parser.parse_args()
+        args = parsers.get_user_email.parse_args()
         user = get_user_by_email(args["email"])
         if user:
             return user.to_json()
         return {"message": "Usuário não cadastrado."}
 
-    @api.expect(user_parser)
+    @api.expect(parsers.user)
     def post(self):
-        args = user_parser.parse_args()
+        args = parsers.user.parse_args()
         try:
             user = User()
             user.email = args["email"]
@@ -87,20 +80,20 @@ class UserResource(Resource):
         return {"message": "Usuário cadastrado com sucesso!"}
 
     @login_required
-    @api.expect(user_parser)
+    @api.expect(parsers.user)
     def put(self):
         """Change user first and last name."""
-        args = user_parser.parse_args()
+        args = parsers.user.parse_args()
         user = current_user
         user.first_name = args["first_name"]
         user.last_name = args["last_name"]
         user.save()
         return {"message": "Dados alterados com sucesso."}
 
-    @api.expect(confirm_password)
+    @api.expect(parsers.confirm_password)
     @login_required
     def delete(self):
-        args = confirm_password.parse_args()
+        args = parsers.confirm_password.parse_args()
         user = current_user
         if user.check_password(args["password"]):
             logout_user()
@@ -111,9 +104,9 @@ class UserResource(Resource):
 
 @api.route("/login")
 class LoginResource(Resource):
-    @api.expect(authenticate)
+    @api.expect(parsers.authenticate)
     def post(self):
-        args = authenticate.parse_args()
+        args = parsers.authenticate.parse_args()
         user = get_user_by_email(args["email"])
         if user:
             if user.check_password(args["password"]):
@@ -129,3 +122,32 @@ class LogoutResource(Resource):
     def get(self):
         logout_user()
         return {"message": "Logout efetuado com sucesso."}
+
+
+@api.route("/event")
+class EventResource(Resource):
+    @api.expect(parsers.event)
+    def get(self):
+        args = parsers.event.parse_args()
+        event = get_event(args["event_name"])
+        if event:
+            return event.to_json()
+        return {"message": "Evento não cadastrado."}
+
+    @api.expect(parsers.event)
+    def post(self):
+        try:
+            args = parsers.event.parse_args()
+            event = Event()
+            event.event_name = args["event_name"]
+            event.time = args["time"]
+            event.date = args["date"]
+            event.local = args["local"]
+            event.ticket_price = args["ticket_price"]
+            event.event_photo = args["event_photo"]
+            event.description = args["description"]
+            event.age_limit = args["age_limit"]
+            event.save()
+        except errors.NotUniqueError:
+            return {"message": "Evento já cadastrado."}
+        return {"message": "Evento cadastrado com sucesso!"}
